@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Roadmap</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/Roadmap.css"> </head>
+<body>
+
+<nav id="navbar">
+    <div class="max-w-7xl px-4 nav-content">
+        <div class="brand-text">CS Interactive Learning Hub</div>
+        <button onclick="window.location.href='index.html'" class="nav-icon-btn">Home</button>
+    </div>
+</nav>
+
+<div class="sub-header-container">
+    <div class="max-w-7xl px-4 sub-header">
+        <div class="flex items-center">
+            <button onclick="history.back()" class="back-btn">← Back</button>
+            <h1 id="roadmap-title" class="page-title">Loading...</h1>
+        </div>
+    </div>
+</div>
+
+<main class="max-w-7xl px-4 py-8">
+    <div class="roadmap-container">
+        <div class="timeline-line"></div>
+        <div id="timeline-tracks">
+        </div>
+    </div>
+</main>
+
+<script src="js/Roadmap.js"></script> </body>
+</html>

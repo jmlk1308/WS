@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - CS Interactive Learning Hub</title>
+    <link rel="stylesheet" href="css/home.css">
+    <style>
+        /* ... (Keep your existing styles here) ... */
+
+        .section-container { padding: 4rem 1.5rem; max-width: 1280px; margin: 0 auto; }
+        .about-section { background-color: #111827; width: 100%; padding: 5rem 0; position: relative; z-index: 20; box-shadow: 0 -10px 20px rgba(0,0,0,0.5); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #3b82f6; }
+        .about-text p { line-height: 1.8; color: #d1d5db; margin-bottom: 1rem; font-size: 1.1rem; }
+        footer { text-align: center; padding: 2rem; background: #000; color: #6b7280; font-size: 0.9rem; margin-top: auto; }
+        main { min-height: 100vh; display: flex; align-items: center; position: relative; z-index: 10; }
+
+        /* AUTH MODAL */
+        .auth-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); align-items: center; justify-content: center; }
+        .auth-box { background: white; padding: 2.5rem; border-radius: 1rem; width: 90%; max-width: 400px; text-align: center; position: relative; animation: popIn 0.3s ease-out; }
+        @keyframes popIn { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        .auth-icon { width: 3.5rem; height: 3.5rem; background: #dbeafe; color: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+        .auth-icon svg { width: 2rem; height: 2rem; fill: currentColor; }
+        .auth-title { font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 0.5rem; }
+        .auth-desc { color: #6b7280; margin-bottom: 2rem; font-size: 0.95rem; }
+        .auth-btn { display: block; width: 100%; padding: 0.75rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none; margin-bottom: 0.75rem; cursor: pointer; transition: 0.2s; }
+        .btn-login-modal { background-color: #2563eb; color: white; border: none; }
+        .btn-login-modal:hover { background-color: #1d4ed8; }
+        .btn-signup-modal { background-color: white; color: #374151; border: 1px solid #d1d5db; }
+        .btn-signup-modal:hover { background-color: #f3f4f6; }
+        .close-modal-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; color: #9ca3af; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div id="bg-container"><div class="bg-overlay"></div></div>
+
+<nav>
+    <div class="max-w-7xl px-6 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="logo-circle"><svg viewBox="0 0 256 256" class="icon-sm"><path d="M208,32H48A16,16,0,0,0,32,48V160a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,128H48V48H208V160Z" fill="white"/><path d="M160,200H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Z" fill="white"/></svg></div>
+            <span class="logo-text">CS Interactive Learning Hub</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About us</a>
+            <a href="student-login.html" class="nav-link" style="color: #22c55e;">Login</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="max-w-7xl w-full px-6 grid-layout">
+        <div id="text-content" class="fade-in">
+            <h1 id="course-title" class="hero-title">WELCOME TO<br>CS LEARNING HUB</h1>
+            <p id="course-desc" class="hero-desc" style="border-left-color: #22c55e;">Your gateway to interactive education. Login to access your modules.</p>
+
+            <a href="student-login.html" class="btn-primary" style="text-decoration: none;">LOGIN TO START</a>
+        </div>
+        <div class="card-perspective">
+            <div class="card-container" id="card-track"></div>
+            <div class="carousel-controls">
+                <button id="prevBtn" class="control-btn"><svg viewBox="0 0 256 256"><polyline points="160 208 80 128 160 48" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button id="nextBtn" class="control-btn"><svg viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section id="about" class="about-section">
+    <div class="section-container">
+        <div class="about-grid">
+            <div class="about-text"><h2>About Us</h2><p>The <strong>CS Interactive Learning Hub</strong> is a modern educational platform built to help students visualize their academic journey.</p></div>
+            <div style="background: #1f2937; padding: 2rem; border-radius: 1rem; border: 1px solid #374151;"><h3 style="color: white; margin-bottom: 1rem;">Platform Features</h3><ul style="color: #d1d5db; line-height: 2; list-style: none;"><li>🚀 <strong>Interactive 3D Course Selection</strong></li><li>📅 <strong>Dynamic Module Roadmaps</strong></li></ul></div>
+        </div>
+    </div>
+</section>
+
+<div id="authModal" class="auth-modal">
+    <div class="auth-box">
+        <button class="close-modal-btn" onclick="document.getElementById('authModal').style.display='none'">×</button>
+        <div class="auth-icon"><svg viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm40-84H88V56a40,40,0,0,1,80,0Z"/></svg></div>
+        <h3 class="auth-title">Unlock this Course</h3>
+        <p class="auth-desc">Please Log in or Sign up to view.</p>
+        <a href="student-login.html" class="auth-btn btn-login-modal">Log In</a>
+        <a href="student-login.html" class="auth-btn btn-signup-modal">Sign Up</a>
+    </div>
+</div>
+
+<script src="js/home.js"></script>
+<script>window.onclick = function(e) { if(e.target == document.getElementById('authModal')) document.getElementById('authModal').style.display='none'; }</script>
+</body>
+</html>

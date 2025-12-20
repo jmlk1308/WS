@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<div id="bg-container"><div class="bg-overlay"></div></div>
+<nav>
+    <div class="max-w-7xl px-6 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="logo-circle"><svg viewBox="0 0 256 256" class="icon-sm"><path d="M208,32H48A16,16,0,0,0,32,48V160a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,128H48V48H208V160Z" fill="white"/><path d="M160,200H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Z" fill="white"/></svg></div>
+            <span class="logo-text">CS Interactive Learning Hub</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active">Home</a>
+            <a href="landing.html" class="nav-link" style="color: #ef4444;">Logout</a>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="max-w-7xl w-full px-6 grid-layout">
+        <div id="text-content" class="fade-in">
+            <h1 id="course-title" class="hero-title">BS INFORMATION<br>TECHNOLOGY</h1>
+            <p id="course-desc" class="hero-desc">The BSIT program equips students with the skills to develop software.</p>
+            <button id="viewLessonBtn" class="btn-primary">VIEW LESSONS</button>
+        </div>
+        <div class="card-perspective">
+            <div class="card-container" id="card-track"></div>
+            <div class="carousel-controls">
+                <button id="prevBtn" class="control-btn"><svg viewBox="0 0 256 256"><polyline points="160 208 80 128 160 48" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button id="nextBtn" class="control-btn"><svg viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="js/home.js"></script>
+</body>
+</html>

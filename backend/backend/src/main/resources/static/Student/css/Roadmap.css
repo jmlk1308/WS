@@ -1,0 +1,94 @@
+/* Re-use dashboard variables */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+body { font-family: 'Segoe UI', sans-serif; background-color: #F8F9FD; }
+
+/* Navbar Overrides */
+.back-btn {
+    background: none; border: none; color: #6b7280; font-weight: 600;
+    margin-right: 1rem; cursor: pointer; font-size: 1rem;
+}
+.back-btn:hover { color: #1f2937; }
+
+/* Timeline Container */
+.roadmap-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+/* The vertical line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    background-color: #E5E7EB;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+/* Individual Module Row */
+.module-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Alternating Layout */
+.module-row.left { flex-direction: row; }
+.module-row.right { flex-direction: row-reverse; }
+
+/* The Card */
+.module-card {
+    background: white;
+    width: 45%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-top: 4px solid #3b82f6; /* Default color */
+    position: relative;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+.module-title { font-weight: 800; font-size: 1.15rem; color: #111827; margin-bottom: 0.5rem; }
+.module-desc { font-size: 0.9rem; color: #6B7280; line-height: 1.5; }
+
+/* Status Badge */
+.status-badge {
+    display: inline-block; font-size: 0.75rem; padding: 0.25rem 0.75rem;
+    border-radius: 99px; margin-top: 1rem; font-weight: 700; letter-spacing: 0.5px;
+}
+.status-active { background: #DBEAFE; color: #1E40AF; }
+.status-locked { background: #F3F4F6; color: #9CA3AF; }
+
+/* The Center Marker (Pin) */
+.module-marker {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: white;
+    border: 4px solid #3B82F6;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3B82F6;
+    font-weight: 800;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Details</title>
+    <link rel="stylesheet" href="css/Subject.css">
+</head>
+<body>
+
+    <!-- Navbar (Same as Dashboard) -->
+    <nav>
+        <div class="max-w-7xl px-4 nav-content">
+            <div class="brand-text">CS Interactive Learning Hub</div>
+            <button onclick="window.location.href='index.html'" class="nav-btn">Home</button>
+        </div>
+    </nav>
+
+    <!-- Sub Header -->
+    <div class="sub-header">
+        <div class="max-w-7xl px-4 flex items-center">
+            <button onclick="history.back()" class="back-btn">← Back</button>
+            <h1 id="subject-title" class="page-title">Loading Subject...</h1>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl px-4">
+
+        <!-- Tab Navigation -->
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="switchTab('video')" style="border-color: #ef4444;">Video</button>
+            <button class="tab-btn" onclick="switchTab('pdf')" style="border-color: #f59e0b;">PDF</button>
+            <button class="tab-btn" onclick="switchTab('ppt')" style="border-color: #22c55e;">PPT</button>
+            <button class="tab-btn" onclick="switchTab('quiz')" style="border-color: #3b82f6;">QUIZ</button>
+        </div>
+
+        <!-- Content Viewer Area -->
+        <div class="viewer-box">
+            <div id="content-display">
+                <!-- Content injected by JS -->
+                <div class="placeholder">Select a tab to view content</div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/Subject.js"></script>
+</body>
+</html>

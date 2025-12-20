@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Lesson</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<aside class="sidebar">
+    <div class="profile-section">
+        <div class="profile-img"><span>P</span></div>
+        <h3>Prof. ...</h3>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li class="nav-item">
+                <a href="professor-dashboard.html" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-table-columns"></i> <span>Dashboard</span></div>
+                </a>
+            </li>
+            <li class="nav-item has-submenu active open">
+                <a href="#" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-person-chalkboard"></i> <span>Lesson</span></div>
+                </a>
+                <ul class="submenu">
+                    <li><a href="view-lesson.html">View Lesson</a></li>
+                    <li><a href="upload-lesson.html">Add Lesson</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-submenu">
+                <a href="#" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-puzzle-piece"></i> <span>Quizzes</span></div>
+                </a>
+                <ul class="submenu">
+                    <li><a href="quizzes.html">View Quizzes</a></li>
+                    <li><a href="create-quiz.html">Add Quiz</a></li>
+                </ul>
+            </li>
+            <li class="nav-item logout">
+                <a href="#" class="nav-link" onclick="logout()">
+                    <div class="nav-content"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<main class="main-content">
+    <div class="brand-title">CS Interactive Learning Hub</div>
+    <div class="page-header"><h1>Upload New Lesson</h1></div>
+
+    <div class="form-wrapper">
+        <form id="uploadForm">
+
+            <div class="input-group">
+                <label>Select Subject</label>
+                <select class="styled-input" id="subjectSelect" required>
+                    <option value="">Loading subjects...</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Select Module</label>
+                <div style="display: flex; gap: 10px;">
+                    <select class="styled-input" id="moduleSelect" style="flex: 1;">
+                        <option value="">Select a Subject first</option>
+                    </select>
+                    <button type="button" id="toggleModuleBtn" class="btn-primary" style="white-space: nowrap;">
+                        <i class="fa-solid fa-plus"></i> New
+                    </button>
+                </div>
+            </div>
+
+            <div id="newModuleFields" style="display:none; background:#f9fafb; padding:15px; border-radius:8px; margin-bottom:15px; border:1px solid #e5e7eb;">
+                <h4 style="margin-bottom:10px; font-size:12px; color:#666; text-transform:uppercase; font-weight:700;">Creating New Module</h4>
+                <div class="input-group">
+                    <label>Module Number</label>
+                    <input type="number" class="styled-input" id="newModNum" placeholder="e.g. 1">
+                </div>
+                <div class="input-group">
+                    <label>Module Title</label>
+                    <input type="text" class="styled-input" id="newModTitle" placeholder="e.g. Introduction">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Lesson Title</label>
+                <input type="text" class="styled-input" id="lessonTitle" required>
+            </div>
+
+            <div class="input-group">
+                <label>File</label>
+                <div class="dashed-upload" id="dropArea">
+                    <i class="fa-solid fa-file-import upload-icon"></i>
+                    <div class="upload-text"><h3>Click or Drag to Browse</h3></div>
+                    <input type="file" id="fileInput" hidden required>
+                </div>
+                <div id="fileNameDisplay" style="margin-top: 10px; font-size: 0.9rem; color: #2563EB;"></div>
+            </div>
+
+            <button type="submit" class="btn-submit">Upload Lesson</button>
+        </form>
+    </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/professor.js"></script>
+
+<script>
+    // Simple script to show selected filename
+    const fileInput = document.getElementById('fileInput');
+    const dropArea = document.getElementById('dropArea');
+    const nameDisplay = document.getElementById('fileNameDisplay');
+
+    dropArea.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', () => {
+        if(fileInput.files.length > 0) {
+            nameDisplay.textContent = "Selected: " + fileInput.files[0].name;
+        }
+    });
+</script>
+
+</body>
+</html>

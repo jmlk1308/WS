@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Subject</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<aside class="sidebar">
+    <div class="profile-section">
+        <div class="profile-img"><span>P</span></div>
+        <h3>Prof. Davis</h3>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li class="nav-item active">
+                <a href="professor-dashboard.html" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-table-columns"></i> <span>Dashboard</span></div>
+                </a>
+            </li>
+
+            <li class="nav-item has-submenu">
+                <a href="#" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-person-chalkboard"></i> <span>Lesson</span></div>
+                </a>
+                <ul class="submenu">
+                    <li><a href="view-lesson.html">View Lesson</a></li>
+                    <li><a href="upload-lesson.html">Add Lesson</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-submenu">
+                <a href="#" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-puzzle-piece"></i> <span>Quizzes</span></div>
+                </a>
+                <ul class="submenu">
+                    <li><a href="quizzes.html">View Quizzes</a></li>
+                    <li><a href="create-quiz.html">Add Quiz</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item logout">
+                <a href="#" class="nav-link" onclick="logout()">
+                    <div class="nav-content"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+<main class="main-content">
+    <div class="brand-title">CS Interactive Learning Hub</div>
+    <div class="page-header"><h1>Add New Subject</h1></div>
+    <div class="form-wrapper">
+        <form>
+            <div class="input-group">
+                <label>Select Course</label>
+                <select class="styled-input" id="courseSelect">
+                    <option>Loading courses...</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Subject Code</label>
+                <input type="text" class="styled-input" placeholder="e.g. CC103">
+            </div>
+            <div class="input-group">
+                <label>Description</label>
+                <input type="text" class="styled-input" placeholder="e.g. Data Structures">
+            </div>
+            <div class="input-group">
+                <label>Year</label>
+                <select class="styled-input">
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Create Subject</button>
+        </form>
+    </div>
+</main>
+<script src="js/main.js"></script>
+<script src="js/professor.js"></script>
+</body>
+</html>

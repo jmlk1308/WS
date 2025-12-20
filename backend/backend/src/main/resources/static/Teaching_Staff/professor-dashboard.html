@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="profile-section">
+        <div class="profile-img"><span>P</span></div>
+        <h3>Prof. ...</h3>
+    </div>
+
+    <nav class="nav-menu">
+        <ul>
+            <li class="nav-item active">
+                <a href="professor-dashboard.html" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-table-columns"></i> <span>Dashboard</span></div>
+                </a>
+            </li>
+
+            <li class="nav-item has-submenu">
+                <a href="#" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-person-chalkboard"></i> <span>Lesson</span></div>
+                </a>
+                <ul class="submenu">
+                    <li><a href="view-lesson.html">View Lesson</a></li>
+                    <li><a href="upload-lesson.html">Add Lesson</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-submenu">
+                <a href="#" class="nav-link">
+                    <div class="nav-content"><i class="fa-solid fa-puzzle-piece"></i> <span>Quizzes</span></div>
+                </a>
+                <ul class="submenu">
+                    <li><a href="quizzes.html">View Quizzes</a></li>
+                    <li><a href="create-quiz.html">Add Quiz</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item logout">
+                <a href="#" class="nav-link" onclick="logout()">
+                    <div class="nav-content"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<main class="main-content">
+    <div class="brand-title">CS Interactive Learning Hub</div>
+
+    <div class="page-header">
+        <h3>DASHBOARD</h3>
+        <h1>Overview</h1>
+    </div>
+
+    <div class="cards-grid">
+        <div class="info-card">
+            <div class="icon-circle blue-bg"><i class="fa-solid fa-user-group"></i></div>
+            <div class="card-text">
+                <h2 id="totalStudents">0</h2> <p>Total Students</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="icon-circle green-bg"><i class="fa-solid fa-book"></i></div>
+            <div class="card-text">
+                <h2 id="activeSubjects">0</h2> <p>Active Subjects</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="icon-circle yellow-bg"><i class="fa-solid fa-file-video"></i></div>
+            <div class="card-text">
+                <h2 id="totalLessons">0</h2> <p>Total Lessons</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/professor.js"></script>
+
+</body>
+</html>
