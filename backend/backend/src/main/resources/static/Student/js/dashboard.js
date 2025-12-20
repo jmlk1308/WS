@@ -9,7 +9,7 @@ let showAllCards = false; // ✅ NEW: Tracks if we should show all cards or just
 
 document.addEventListener("DOMContentLoaded", () => {
     // A. Load Course Info
-    fetch(`http://localhost:8080/api/courses/${courseId}`)
+    fetch(`https://YOUR-APP-NAME.onrender.com/api/courses/${cId}/subjects`)
         .then(r => r.json())
         .then(data => {
             const titleEl = document.getElementById('dashboard-title');
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 2. DATA FETCHING
 // ==========================================
 function fetchSubjects(cId) {
-    fetch(`http://localhost:8080/api/courses/${cId}/subjects`)
+    fetch(`https://YOUR-APP-NAME.onrender.com/api/courses/${cId}/subjects`)
         .then(r => r.json())
         .then(subjects => {
             allSubjects = subjects;

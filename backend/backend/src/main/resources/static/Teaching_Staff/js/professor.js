@@ -1,4 +1,7 @@
-const API_URL = "http://localhost:8080/api/professor";
+// OLD: const API_URL = "http://localhost:8080/api/professor";
+// NEW:
+const API_URL = "https://YOUR-APP-NAME.onrender.com/api/professor";
+// (Use /api/admin for admin.js)
 const USER_KEY = 'user';
 
 document.addEventListener("DOMContentLoaded", () => {

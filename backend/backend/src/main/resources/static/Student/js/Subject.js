@@ -52,8 +52,7 @@ async function switchTab(type) {
     display.innerHTML = '<div class="placeholder"><div class="spinner"></div> Loading content...</div>';
 
     try {
-        // --- Prepare API URL ---
-        let url = `http://localhost:8080/api/student/materials?subjectCode=${subjectId}`;
+        fileUrl = `https://YOUR-APP-NAME.onrender.com/uploads/${file.filePath}`;
 
         // If filtering by specific module
         if (moduleId) {
@@ -82,7 +81,7 @@ async function switchTab(type) {
             // 1. Handle File URL (Local vs External)
             let fileUrl = file.filePath;
             if (!fileUrl.startsWith('http')) {
-                fileUrl = `http://localhost:8080/uploads/${file.filePath}`;
+                fileUrl = `https://YOUR-APP-NAME.onrender.com/uploads/${file.filePath}`;
             }
 
             // 2. Determine Style based on Type

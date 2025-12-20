@@ -14,9 +14,11 @@ const IMG_BASE_URL = "http://localhost:8080/uploads/";
 // ==========================================
 // 2. DATA FETCHING & PROCESSING
 // ==========================================
+const IMG_BASE_URL = "https://YOUR-APP-NAME.onrender.com/uploads/";
+
 async function fetchCourses() {
     try {
-        const response = await fetch('http://localhost:8080/api/admin/courses');
+        const response = await fetch('https://YOUR-APP-NAME.onrender.com/api/admin/courses');
         if (!response.ok) throw new Error("Failed to fetch courses");
 
         const dbCourses = await response.json();

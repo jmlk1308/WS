@@ -1,4 +1,7 @@
-const API_URL = "http://localhost:8080/api/admin";
+// OLD: const API_URL = "http://localhost:8080/api/professor";
+// NEW:
+const API_URL = "https://YOUR-APP-NAME.onrender.com/api/admin";
+// (Use /api/admin for admin.js
 
 // State Variables
 let isEditCourseMode = false;

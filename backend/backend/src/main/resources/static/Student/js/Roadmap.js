@@ -15,7 +15,9 @@ if (subjectId) {
 // 2. Fetch Modules from Backend
 if (subjectId) {
     // IMPORTANT: Accessing port 8080 where your backend runs
-    fetch(`http://localhost:8080/api/admin/modules?subjectCode=${subjectId}`)
+    // OLD: fetch(`http://localhost:8080/api/admin/modules?subjectCode=${subjectId}`)
+    // NEW:
+    fetch(`https://YOUR-APP-NAME.onrender.com/api/admin/modules?subjectCode=${subjectId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Server Error: ${response.status}`);
